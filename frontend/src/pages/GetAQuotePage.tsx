@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Phone, Mail, Clock, CheckCircle2 } from "lucide-react";
-import logo from "@/assets/logo.png";
 
 const GetAQuotePage = () => {
   const [form, setForm] = useState({ firstName: "", lastName: "", email: "", phone: "", message: "" });
@@ -29,8 +28,6 @@ const GetAQuotePage = () => {
           <div className="flex flex-col lg:flex-row gap-12">
             {/* Left Side - Info */}
             <div className="lg:w-1/2 animate-slide-right">
-              <img src={logo} alt="Core Space Warehousing" className="h-16 w-auto mb-6" />
-
               <h2 className="text-2xl font-bold text-foreground mb-4">Who We Are</h2>
               <p className="text-muted-foreground leading-relaxed mb-8">
                 Core Space Warehousing provides flexible warehouse solutions tailored to businesses of all sizes. We focus on reliability, accessibility, and customized space options to ensure your storage needs are met efficiently. Serving businesses across Canada, we are committed to delivering practical and scalable warehousing solutions that support your growth.

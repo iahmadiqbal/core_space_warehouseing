@@ -15,12 +15,12 @@ const CTASection = ({
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section ref={ref} className="bg-primary py-20">
+    <section ref={ref} className="bg-[#951313] py-20">
       <div className={`container mx-auto px-4 text-center ${isVisible ? "animate-slide-up" : "opacity-0"}`}>
-        <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-6">{heading}</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">{heading}</h2>
         <Link
           to={buttonLink}
-          className="inline-block px-8 py-4 bg-accent text-accent-foreground rounded-lg text-lg font-semibold hover:opacity-90 transition-opacity shadow-lg"
+          className="inline-block px-8 py-4 bg-white text-[#951313] rounded-lg text-lg font-semibold hover:opacity-90 transition-opacity shadow-lg"
         >
           {buttonText}
         </Link>

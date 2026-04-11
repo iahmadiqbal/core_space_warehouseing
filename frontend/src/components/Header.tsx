@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ChevronDown, Home, Menu, X } from "lucide-react";
-import logo from "@/assets/logo.png";
+import { ChevronDown, Menu, X } from "lucide-react";
 
 const whoWeServeItems = [
   { label: "Retail & E-commerce", path: "/who-we-serve#retail" },
@@ -28,31 +27,48 @@ const Header = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="sticky top-0 z-50 bg-card shadow-sm border-b border-border">
-      <div className="container mx-auto flex items-center justify-between py-3 px-4">
-        <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="Core Space Warehousing" className="h-10 w-auto" />
-          <Home className="h-5 w-5 text-primary" />
+    <header className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-200 py-1">
+      <div className="container mx-auto flex items-center justify-between px-3">
+        {/* Logo */}
+        <Link to="/" className="flex items-center">
+          <img
+            src="/headerlogo.png"
+            alt="Core Space Warehousing"
+            className="h-28 w-auto"
+          />
         </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-1">
-          {/* Who We Serve Dropdown */}
+          <Link
+            to="/"
+            className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors hover:bg-gray-100 ${
+              isActive("/") ? "text-[#951313]" : "text-gray-700"
+            }`}
+          >
+            Home
+          </Link>
+
           <div
             className="relative"
             onMouseEnter={() => setOpenDropdown("serve")}
             onMouseLeave={() => setOpenDropdown(null)}
           >
-            <button className={`flex items-center gap-1 px-4 py-2 rounded-md text-sm font-medium transition-colors hover:bg-secondary ${isActive("/who-we-serve") ? "text-primary" : "text-foreground"}`}>
+            <button
+              className={`flex items-center gap-1 px-3 py-1.5 rounded-md text-sm font-medium transition-colors hover:bg-gray-100 ${
+                isActive("/who-we-serve") ? "text-[#951313]" : "text-gray-700"
+              }`}
+            >
               Who We Serve <ChevronDown className="h-4 w-4" />
             </button>
+
             {openDropdown === "serve" && (
-              <div className="absolute top-full left-0 mt-1 w-64 bg-card rounded-lg shadow-lg border border-border py-2 animate-fade-in-up">
+              <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-lg border border-gray-200 py-2">
                 {whoWeServeItems.map((item) => (
                   <Link
                     key={item.label}
                     to={item.path}
-                    className="block px-4 py-2.5 text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors"
+                    className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#951313]"
                     onClick={() => setOpenDropdown(null)}
                   >
                     {item.label}
@@ -62,22 +78,26 @@ const Header = () => {
             )}
           </div>
 
-          {/* Our Services Dropdown */}
           <div
             className="relative"
             onMouseEnter={() => setOpenDropdown("services")}
             onMouseLeave={() => setOpenDropdown(null)}
           >
-            <button className={`flex items-center gap-1 px-4 py-2 rounded-md text-sm font-medium transition-colors hover:bg-secondary ${isActive("/services") ? "text-primary" : "text-foreground"}`}>
+            <button
+              className={`flex items-center gap-1 px-3 py-1.5 rounded-md text-sm font-medium transition-colors hover:bg-gray-100 ${
+                isActive("/services") ? "text-[#951313]" : "text-gray-700"
+              }`}
+            >
               Our Services <ChevronDown className="h-4 w-4" />
             </button>
+
             {openDropdown === "services" && (
-              <div className="absolute top-full left-0 mt-1 w-64 bg-card rounded-lg shadow-lg border border-border py-2 animate-fade-in-up">
+              <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-lg border border-gray-200 py-2">
                 {servicesItems.map((item) => (
                   <Link
                     key={item.label}
                     to={item.path}
-                    className="block px-4 py-2.5 text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors"
+                    className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#951313]"
                     onClick={() => setOpenDropdown(null)}
                   >
                     {item.label}
@@ -87,50 +107,35 @@ const Header = () => {
             )}
           </div>
 
-          <Link to="/about" className={`px-4 py-2 rounded-md text-sm font-medium transition-colors hover:bg-secondary ${isActive("/about") ? "text-primary" : "text-foreground"}`}>
+          <Link
+            to="/about"
+            className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors hover:bg-gray-100 ${
+              isActive("/about") ? "text-[#951313]" : "text-gray-700"
+            }`}
+          >
             About
           </Link>
 
-          <Link to="/get-a-quote" className="ml-2 px-5 py-2.5 bg-primary text-primary-foreground rounded-md text-sm font-medium hover:opacity-90 transition-opacity">
+          <Link
+            to="/get-a-quote"
+            className="ml-2 px-4 py-2 bg-[#182448] text-white rounded-md text-sm font-medium hover:opacity-90"
+          >
             Get a Quote
           </Link>
         </nav>
 
         {/* Mobile toggle */}
-        <button className="lg:hidden p-2" onClick={() => setMobileOpen(!mobileOpen)}>
-          {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        <button
+          className="lg:hidden p-2"
+          onClick={() => setMobileOpen(!mobileOpen)}
+        >
+          {mobileOpen ? (
+            <X className="h-6 w-6" />
+          ) : (
+            <Menu className="h-6 w-6" />
+          )}
         </button>
       </div>
-
-      {/* Mobile Nav */}
-      {mobileOpen && (
-        <div className="lg:hidden bg-card border-t border-border animate-slide-down">
-          <div className="px-4 py-3 space-y-1">
-            <div>
-              <button onClick={() => setOpenDropdown(openDropdown === "m-serve" ? null : "m-serve")} className="flex items-center justify-between w-full py-2 text-sm font-medium text-foreground">
-                Who We Serve <ChevronDown className={`h-4 w-4 transition-transform ${openDropdown === "m-serve" ? "rotate-180" : ""}`} />
-              </button>
-              {openDropdown === "m-serve" && whoWeServeItems.map((item) => (
-                <Link key={item.label} to={item.path} className="block pl-4 py-2 text-sm text-muted-foreground hover:text-primary" onClick={() => setMobileOpen(false)}>
-                  {item.label}
-                </Link>
-              ))}
-            </div>
-            <div>
-              <button onClick={() => setOpenDropdown(openDropdown === "m-services" ? null : "m-services")} className="flex items-center justify-between w-full py-2 text-sm font-medium text-foreground">
-                Our Services <ChevronDown className={`h-4 w-4 transition-transform ${openDropdown === "m-services" ? "rotate-180" : ""}`} />
-              </button>
-              {openDropdown === "m-services" && servicesItems.map((item) => (
-                <Link key={item.label} to={item.path} className="block pl-4 py-2 text-sm text-muted-foreground hover:text-primary" onClick={() => setMobileOpen(false)}>
-                  {item.label}
-                </Link>
-              ))}
-            </div>
-            <Link to="/about" className="block py-2 text-sm font-medium text-foreground hover:text-primary" onClick={() => setMobileOpen(false)}>About</Link>
-            <Link to="/get-a-quote" className="block mt-2 text-center py-2.5 bg-primary text-primary-foreground rounded-md text-sm font-medium" onClick={() => setMobileOpen(false)}>Get a Quote</Link>
-          </div>
-        </div>
-      )}
     </header>
   );
 };

@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { CheckCircle2, ShoppingCart, Factory, Ship, UtensilsCrossed, Building2, Eye, Target } from "lucide-react";
 import CTASection from "@/components/CTASection";

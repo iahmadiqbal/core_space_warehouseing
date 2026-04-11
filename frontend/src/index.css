@@ -4,25 +4,25 @@
 
 @layer base {
   :root {
-    --background: 210 20% 98%;
-    --foreground: 215 25% 15%;
+    --background: 0 0% 100%;
+    --foreground: 220 13% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 15%;
+    --card-foreground: 220 13% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 15%;
+    --popover-foreground: 220 13% 20%;
 
-    --primary: 210 80% 45%;
+    --primary: 220 60% 18%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 15% 93%;
-    --secondary-foreground: 215 25% 15%;
+    --secondary: 214 32% 97%;
+    --secondary-foreground: 220 13% 20%;
 
-    --muted: 210 15% 95%;
-    --muted-foreground: 215 10% 45%;
+    --muted: 214 32% 97%;
+    --muted-foreground: 220 9% 46%;
 
-    --accent: 25 95% 53%;
+    --accent: 0 76% 33%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -30,23 +30,23 @@
 
     --border: 214 20% 88%;
     --input: 214 20% 88%;
-    --ring: 210 80% 45%;
+    --ring: 220 60% 18%;
 
     --radius: 0.5rem;
 
-    --hero-overlay: 215 25% 15%;
-    --section-alt: 210 20% 96%;
-    --cta-bg: 210 80% 45%;
+    --hero-overlay: 8 95% 6%;
+    --section-alt: 214 32% 97%;
+    --cta-bg: 220 60% 18%;
     --cta-foreground: 0 0% 100%;
 
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-foreground: 220 13% 20%;
+    --sidebar-primary: 220 60% 18%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 214 32% 97%;
+    --sidebar-accent-foreground: 220 13% 20%;
+    --sidebar-border: 214 20% 88%;
+    --sidebar-ring: 220 60% 18%;
   }
 
   .dark {
@@ -98,46 +98,92 @@
   .animate-slide-up {
     animation: slideUp 0.7s ease-out both;
   }
+
   .animate-slide-down {
     animation: slideDown 0.7s ease-out both;
   }
+
   .animate-slide-left {
     animation: slideLeft 0.7s ease-out both;
   }
+
   .animate-slide-right {
     animation: slideRight 0.7s ease-out both;
   }
+
   .animate-fade-in-up {
     animation: fadeInUp 0.7s ease-out both;
   }
+
   .animation-delay-200 {
     animation-delay: 200ms;
   }
+
   .animation-delay-400 {
     animation-delay: 400ms;
   }
+
   .animation-delay-600 {
     animation-delay: 600ms;
   }
 }
 
 @keyframes slideUp {
-  from { opacity: 0; transform: translateY(60px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
 @keyframes slideDown {
-  from { opacity: 0; transform: translateY(-60px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
 @keyframes slideLeft {
-  from { opacity: 0; transform: translateX(60px); }
-  to { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
+
 @keyframes slideRight {
-  from { opacity: 0; transform: translateX(-60px); }
-  to { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
+
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
