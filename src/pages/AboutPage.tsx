@@ -4,14 +4,6 @@ import { CheckCircle2, ShoppingCart, Factory, Ship, UtensilsCrossed, Building2, 
 import CTASection from "@/components/CTASection";
 import aboutHero from "@/assets/about-hero.jpg";
 
-const AboutSection = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => {
-  const { ref, isVisible } = useScrollAnimation();
-  return (
-    <div ref={ref} className={`${isVisible ? "" : "opacity-0"} ${className}`}>
-      {children({ isVisible } as any)}
-    </div>
-  );
-};
 
 const AboutPage = () => {
   const { ref: whoRef, isVisible: whoVis } = useScrollAnimation();
