@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { Phone, Mail, Clock, CheckCircle2 } from "lucide-react";
+import { Phone, Mail, Clock, CheckCircle2, ArrowRight } from "lucide-react";
+import hero1 from "@/assets/hero-warehouse-1.jpg";
 
 const GetAQuotePage = () => {
-  const [form, setForm] = useState({ firstName: "", lastName: "", email: "", phone: "", message: "" });
+  const [form, setForm] = useState({ firstName: "", lastName: "", email: "", phone: "", company: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
   const { ref: contactRef, isVisible: contactVis } = useScrollAnimation();
 
@@ -13,106 +14,138 @@ const GetAQuotePage = () => {
   };
 
   const steps = [
-    "Fill out the form with your requirements",
-    "You will receive a confirmation via email",
-    "A Partner Success Manager (PSM) will be assigned within 24 hours and will contact you via phone",
-    "Review and finalize warehouse options and pricing",
-    "Once rates are approved, provide email confirmation to book the warehouse",
+    "Submit your storage requirements below",
+    "A space specialist contacts you within 24 hours",
+    "Review available configurations and transparent rates",
+    "Finalize the contract and schedule move-in",
   ];
 
   return (
-    <>
-      {/* Main Split Section */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row gap-12">
-            {/* Left Side - Info */}
-            <div className="lg:w-1/2 animate-slide-right">
-              <h2 className="text-2xl font-bold text-foreground mb-4">Who We Are</h2>
-              <p className="text-muted-foreground leading-relaxed mb-8">
-                Core Space Warehousing provides flexible warehouse solutions tailored to businesses of all sizes. We focus on reliability, accessibility, and customized space options to ensure your storage needs are met efficiently. Serving businesses across Canada, we are committed to delivering practical and scalable warehousing solutions that support your growth.
-              </p>
+    <div className="bg-slate-50 min-h-screen">
+      {/* Split Hero / Form Section */}
+      <section className="relative w-full lg:flex">
+        
+        {/* Left Side - Image & Flow */}
+        <div className="lg:w-[45%] bg-slate-900 text-white relative min-h-[500px] flex flex-col justify-center px-8 md:px-16 py-20 lg:py-32">
+          <img src={hero1} alt="Warehouse operations" className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent pointer-events-none" />
+          
+          <div className="relative z-10 animate-slide-right max-w-xl">
+            <span className="inline-block py-1 px-3 rounded-full bg-accent/20 text-accent font-bold text-xs mb-6 tracking-widest uppercase">Start Here</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight text-white">Let's find your perfect space.</h1>
+            <p className="text-lg text-slate-300 font-light mb-12">Core Space Warehousing makes scalable storage accessible. Whether you need a small secure room or a heavy industrial hub, we have the network to support you.</p>
 
-              <h2 className="text-2xl font-bold text-foreground mb-4">How It Works</h2>
-              <div className="space-y-4">
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/10">
+              <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
+                <Clock className="text-accent" /> Quick Process
+              </h3>
+              <div className="space-y-6 relative">
+                <div className="absolute top-2 left-4 bottom-2 w-0.5 bg-white/20"></div>
                 {steps.map((step, i) => (
-                  <div key={i} className="flex gap-4 items-start">
-                    <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold shrink-0">{i + 1}</div>
-                    <p className="text-muted-foreground text-sm pt-1">{step}</p>
+                  <div key={i} className="flex gap-5 relative z-10 items-start">
+                    <div className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold shrink-0 shadow-lg shadow-accent/40">{i + 1}</div>
+                    <p className="text-slate-200 mt-1 font-medium">{step}</p>
                   </div>
                 ))}
               </div>
             </div>
+          </div>
+        </div>
 
-            {/* Right Side - Form */}
-            <div className="lg:w-1/2 animate-slide-left">
-              <div className="bg-card p-8 rounded-xl shadow-lg border border-border">
-                <h2 className="text-2xl font-bold text-foreground mb-2">Get a Quote</h2>
-                <p className="text-sm text-muted-foreground mb-6">We respond within 24 hours</p>
+        {/* Right Side - Form */}
+        <div className="lg:w-[55%] flex items-center justify-center p-8 md:p-16 relative">
+          {/* Decorative blur */}
+          <div className="absolute top-20 right-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+          
+          <div className="w-full max-w-xl animate-slide-left relative z-10">
+            <div className="bg-white p-10 md:p-12 rounded-3xl shadow-2xl border border-slate-100">
+              <h2 className="text-3xl font-extrabold text-slate-900 mb-2">Request a Quote</h2>
+              <p className="text-slate-500 mb-8 font-medium">Complete this form and we'll get right back to you.</p>
 
-                {submitted ? (
-                  <div className="text-center py-12">
-                    <CheckCircle2 className="h-16 w-16 text-primary mx-auto mb-4" />
-                    <h3 className="text-xl font-bold text-foreground mb-2">Thank You!</h3>
-                    <p className="text-muted-foreground">Your request has been submitted. Our team will contact you within 24 hours.</p>
+              {submitted ? (
+                <div className="text-center py-16 animate-fade-in-up">
+                  <div className="w-24 h-24 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <CheckCircle2 className="h-12 w-12 text-green-500" />
                   </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-sm font-medium text-foreground mb-1">First Name *</label>
-                        <input type="text" required value={form.firstName} onChange={(e) => setForm({ ...form, firstName: e.target.value })} className="w-full px-4 py-2.5 rounded-lg border border-input bg-background text-foreground focus:ring-2 focus:ring-ring focus:outline-none" />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-foreground mb-1">Last Name *</label>
-                        <input type="text" required value={form.lastName} onChange={(e) => setForm({ ...form, lastName: e.target.value })} className="w-full px-4 py-2.5 rounded-lg border border-input bg-background text-foreground focus:ring-2 focus:ring-ring focus:outline-none" />
-                      </div>
+                  <h3 className="text-3xl font-bold text-slate-900 mb-3">Message Received!</h3>
+                  <p className="text-slate-600 text-lg">Thank you for reaching out. A Partner Success Manager will contact you within 24 hours.</p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-bold text-slate-700 mb-2">First Name</label>
+                      <input type="text" required value={form.firstName} onChange={(e) => setForm({ ...form, firstName: e.target.value })} placeholder="John" className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 text-slate-900 focus:ring-4 focus:ring-primary/20 focus:border-primary transition-all outline-none" />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-foreground mb-1">Email Address *</label>
-                      <input type="email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="w-full px-4 py-2.5 rounded-lg border border-input bg-background text-foreground focus:ring-2 focus:ring-ring focus:outline-none" />
+                      <label className="block text-sm font-bold text-slate-700 mb-2">Last Name</label>
+                      <input type="text" required value={form.lastName} onChange={(e) => setForm({ ...form, lastName: e.target.value })} placeholder="Doe" className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 text-slate-900 focus:ring-4 focus:ring-primary/20 focus:border-primary transition-all outline-none" />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-bold text-slate-700 mb-2">Work Email</label>
+                      <input type="email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="john@company.com" className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 text-slate-900 focus:ring-4 focus:ring-primary/20 focus:border-primary transition-all outline-none" />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-foreground mb-1">Phone Number *</label>
-                      <input type="tel" required value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className="w-full px-4 py-2.5 rounded-lg border border-input bg-background text-foreground focus:ring-2 focus:ring-ring focus:outline-none" />
+                      <label className="block text-sm font-bold text-slate-700 mb-2">Phone Number</label>
+                      <input type="tel" required value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} placeholder="+1 (555) 000-0000" className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 text-slate-900 focus:ring-4 focus:ring-primary/20 focus:border-primary transition-all outline-none" />
                     </div>
-                    <div>
-                      <label className="block text-sm font-medium text-foreground mb-1">Message</label>
-                      <textarea rows={4} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="w-full px-4 py-2.5 rounded-lg border border-input bg-background text-foreground focus:ring-2 focus:ring-ring focus:outline-none resize-none" />
-                    </div>
-                    <button type="submit" className="w-full py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition-opacity">
-                      Submit Request
-                    </button>
-                  </form>
-                )}
-              </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-bold text-slate-700 mb-2">Company Name (Optional)</label>
+                    <input type="text" value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} placeholder="Your Company Ltd." className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 text-slate-900 focus:ring-4 focus:ring-primary/20 focus:border-primary transition-all outline-none" />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-bold text-slate-700 mb-2">Storage Requirements</label>
+                    <textarea rows={4} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="Tell us about the space you need, duration, and any special requirements (e.g., climate control, loading docks)." className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 text-slate-900 focus:ring-4 focus:ring-primary/20 focus:border-primary transition-all outline-none resize-none" />
+                  </div>
+
+                  <button type="submit" className="group w-full py-4 mt-4 bg-slate-900 text-white rounded-xl font-bold flex justify-center items-center gap-2 hover:bg-primary transition-colors shadow-lg hover:shadow-xl">
+                    Submit Request <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                  <p className="text-center text-xs text-slate-400 mt-4">We respect your privacy. No spam ever.</p>
+                </form>
+              )}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section ref={contactRef} className="py-16 bg-section-alt">
-        <div className={`container mx-auto px-4 text-center ${contactVis ? "animate-slide-up" : "opacity-0"}`}>
-          <h2 className="text-3xl font-bold text-foreground mb-2">Have Questions?</h2>
-          <p className="text-muted-foreground mb-8">Our team is here to help you.</p>
-          <div className="flex flex-col md:flex-row justify-center gap-8">
-            <div className="flex items-center gap-3">
-              <Phone className="h-6 w-6 text-primary" />
-              <span className="text-foreground font-medium">+1 (800) 123-4567</span>
+      {/* Contact Quick Links */}
+      <section ref={contactRef} className="py-24 bg-white border-t border-slate-200">
+        <div className={`container mx-auto px-4 ${contactVis ? "animate-slide-up" : "opacity-0"}`}>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div className="flex flex-col items-center p-8 bg-slate-50 rounded-2xl hover:bg-white hover:shadow-xl transition-all border border-slate-100">
+              <div className="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-6">
+                <Phone className="h-8 w-8" />
+              </div>
+              <h3 className="font-bold text-slate-900 mb-2 text-xl">Call Us</h3>
+              <p className="text-slate-500 mb-1">+1 (800) 123-4567</p>
             </div>
-            <div className="flex items-center gap-3">
-              <Mail className="h-6 w-6 text-primary" />
-              <span className="text-foreground font-medium">info@corespacewh.com</span>
+
+            <div className="flex flex-col items-center p-8 bg-slate-50 rounded-2xl hover:bg-white hover:shadow-xl transition-all border border-slate-100">
+              <div className="w-16 h-16 bg-accent/10 text-accent rounded-full flex items-center justify-center mb-6">
+                <Mail className="h-8 w-8" />
+              </div>
+              <h3 className="font-bold text-slate-900 mb-2 text-xl">Email Us</h3>
+              <p className="text-slate-500 mb-1">info@corespacewh.com</p>
             </div>
-            <div className="flex items-center gap-3">
-              <Clock className="h-6 w-6 text-primary" />
-              <span className="text-foreground font-medium">Mon – Fri, 9AM – 6PM EST</span>
+
+            <div className="flex flex-col items-center p-8 bg-slate-50 rounded-2xl hover:bg-white hover:shadow-xl transition-all border border-slate-100">
+              <div className="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-6">
+                <Clock className="h-8 w-8" />
+              </div>
+              <h3 className="font-bold text-slate-900 mb-2 text-xl">Hours</h3>
+              <p className="text-slate-500 mb-1">Mon – Fri, 9AM – 6PM EST</p>
             </div>
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 

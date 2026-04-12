@@ -27,14 +27,14 @@ const Header = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-200 py-1">
-      <div className="container mx-auto flex items-center justify-between px-3">
+    <header className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-200 h-20 lg:h-24">
+      <div className="container mx-auto flex items-center justify-between px-3 h-full">
         {/* Logo */}
-        <Link to="/" className="flex items-center">
+        <Link to="/" className="flex items-center h-full">
           <img
             src="/headerlogo.png"
             alt="Core Space Warehousing"
-            className="h-28 w-auto"
+            className="h-full w-auto object-contain scale-[1.3] md:scale-[1.5] origin-left"
           />
         </Link>
 

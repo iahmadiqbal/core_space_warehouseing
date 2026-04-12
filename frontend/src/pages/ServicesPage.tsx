@@ -9,43 +9,56 @@ import longTermImg from "@/assets/long-term.jpg";
 import climateImg from "@/assets/climate-controlled.jpg";
 import inventoryImg from "@/assets/inventory-management.jpg";
 import customImg from "@/assets/custom-storage.jpg";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 const sections = [
   {
     id: "business-warehouses",
     title: "Business Warehouses",
+    subtitle: "Scalable Hubs for Enterprises",
     image: businessImg,
-    content: "Core Space Warehousing offers business warehouse solutions designed for companies of all sizes — small, medium, and large. Whether you're a startup looking for your first storage space or an established enterprise needing a large distribution hub, we have warehouse options that fit your operational scale. Our business warehouses come with flexible floor plans, high ceilings, loading docks, and secure access systems. We understand that every business has different storage volumes and workflows, so we offer customizable configurations to match your specific requirements. Our facilities are strategically located for easy transportation and logistics access, helping you reduce operational costs. With competitive pricing and flexible lease terms, scaling your warehouse space up or down is hassle-free. Let us be your warehousing partner and provide the foundation your business needs to thrive."
+    content: "Core Space Warehousing offers business warehouse solutions designed for companies of all sizes. Whether you're a startup looking for your first storage space or an established enterprise needing a large distribution hub, we have options that fit perfectly.",
+    bullets: ["Flexible floor plans & high ceilings", "Dedicated loading docks", "Secure access systems", "Strategically located for logistics"]
   },
   {
     id: "short-term",
     title: "Short-Term Rentals",
+    subtitle: "Agiity when you need it",
     image: shortTermImg,
-    content: "Need warehouse space for a limited period? Core Space Warehousing offers flexible short-term rental options perfect for seasonal demands, project-based storage, or overflow inventory. Our short-term rentals provide all the benefits of a full warehouse facility without the commitment of a long-term lease. Whether you need space for a few weeks or several months, we accommodate your timeline. Our short-term solutions are ideal for businesses experiencing seasonal peaks, companies managing special projects, or organizations in transition. You get access to secure, well-maintained facilities with loading docks, shelving systems, and 24/7 security. The onboarding process is quick and straightforward — submit your requirements, and our team will match you with available space that meets your needs. No hidden fees, no complicated contracts — just the storage space you need, when you need it."
+    content: "Need warehouse space for a limited period? We offer flexible short-term rental options perfect for seasonal demands, project-based storage, or overflow inventory. Get all the benefits of a full warehouse without the long-term commitment.",
+    bullets: ["No complicated contracts", "Quick onboarding process", "Perfect for seasonal peaks", "Fully secure facilities"]
   },
   {
     id: "long-term",
     title: "Long-Term Rentals",
+    subtitle: "Your stable base of operations",
     image: longTermImg,
-    content: "For businesses that need consistent, dedicated warehouse space, Core Space Warehousing offers long-term rental solutions that provide stability and cost-effectiveness. Our long-term warehouses serve as an extension of your business operations, giving you a reliable base for inventory management, distribution, and logistics. Long-term tenants benefit from priority access to premium warehouse spaces, dedicated loading docks, and the option to customize their storage layout. We offer competitive rates that become more favorable with extended commitments, helping you budget effectively for your storage needs. Our long-term partnerships are built on trust and reliability — we invest in maintaining our facilities to the highest standards so your goods are always stored safely. Whether you're establishing a new distribution center or expanding your existing operations, our long-term solutions grow with your business."
+    content: "For businesses that need consistent, dedicated warehouse space, our long-term solutions provide stability and cost-effectiveness. Act as an extension of your operations, giving you a reliable base for inventory management and distribution.",
+    bullets: ["Competitive extended rates", "Priority premium access", "Layout customization options", "Unmatched reliability"]
   },
   {
     id: "climate",
     title: "Climate-Controlled Units",
+    subtitle: "Precision environments",
     image: climateImg,
-    content: "Some products require specific environmental conditions to maintain their quality and integrity. Core Space Warehousing provides state-of-the-art climate-controlled storage units that maintain precise temperature and humidity levels. Our climate-controlled facilities are ideal for pharmaceuticals, electronics, fine art, wine, food products, cosmetics, and any goods sensitive to environmental fluctuations. Each unit is equipped with advanced HVAC systems, continuous monitoring sensors, and backup power supplies to ensure consistent conditions around the clock. Our team regularly inspects and maintains these systems to guarantee optimal performance. You'll receive detailed environmental reports and can monitor conditions remotely. Whether you need cold storage, temperature-maintained rooms, or humidity-controlled environments, we have the infrastructure to protect your valuable inventory."
+    content: "Protect sensitive goods with our state-of-the-art climate-controlled units. Ideal for pharmaceuticals, electronics, fine art, wine, and cosmetics. Each unit maintains precise temperature and humidity levels around the clock.",
+    bullets: ["Advanced HVAC systems", "Continuous sensor monitoring", "Backup power supplies", "Detailed environmental reports"]
   },
   {
     id: "inventory",
     title: "Inventory Management",
+    subtitle: "End-to-end stock control",
     image: inventoryImg,
-    content: "Beyond just providing warehouse space, Core Space Warehousing offers optional inventory management services to help you keep track of your stored goods. Our inventory management solutions include receiving and cataloging shipments, organizing stock by category or SKU, tracking inventory levels, and generating regular reports. Using modern tracking systems, we ensure you have real-time visibility into your inventory at all times. This service is perfect for businesses that want to streamline their warehousing operations without investing in their own inventory management infrastructure. Our experienced warehouse staff handles the day-to-day management of your stock, allowing you to focus on core business activities. From barcode scanning to digital inventory records, we bring efficiency and accuracy to your warehouse operations."
+    content: "Beyond space, we offer comprehensive inventory management. Let our experienced staff handle receiving, cataloging, tracking, and reporting. Streamline your operations without heavy infrastructure investments.",
+    bullets: ["Real-time digital visibility", "Barcode scanning systems", "Regular stock reporting", "SKU-based organization"]
   },
   {
     id: "custom",
-    title: "Customized Storage Solutions",
+    title: "Customized Storage",
+    subtitle: "Built around your specifications",
     image: customImg,
-    content: "Every business has unique storage needs, and sometimes standard warehouse configurations don't fit the bill. Core Space Warehousing offers customized storage solutions tailored to your specific requirements. Whether you need specialized racking systems, partitioned areas, clean room environments, or unique loading configurations, our team works with you to design and implement the perfect warehouse setup. We start by understanding your business operations, product types, volume requirements, and workflow patterns. Based on this assessment, we create a customized warehouse plan that maximizes efficiency and minimizes costs. Our customization options include adjustable shelving heights, dedicated staging areas, office spaces within the warehouse, and specialized handling equipment. No request is too unique — if you need it, we can build it."
+    content: "Every business is unique. We design and implement specialized setups including racking systems, partitioned areas, clean rooms, and unique loading configurations to maximize efficiency and minimize costs.",
+    bullets: ["Adjustable shelving heights", "Dedicated staging areas", "Specialized handling equipment", "In-warehouse office spaces"]
   },
 ];
 
@@ -54,17 +67,34 @@ const SectionBlock = ({ section, index }: { section: typeof sections[0]; index: 
   const isEven = index % 2 === 0;
 
   return (
-    <section ref={ref} id={section.id} className={`py-20 ${index % 2 === 0 ? "bg-background" : "bg-section-alt"}`}>
-      <div className="container mx-auto px-4">
-        <div className={`flex flex-col ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"} gap-10 items-center`}>
-          <div className={`lg:w-1/2 ${isVisible ? (isEven ? "animate-slide-right" : "animate-slide-left") : "opacity-0"}`}>
-            <img src={section.image} alt={section.title} className="rounded-xl shadow-lg w-full object-cover h-[350px]" loading="lazy" width={800} height={600} />
+    <section ref={ref} id={section.id} className={`py-24 relative overflow-hidden ${index % 2 === 0 ? "bg-white" : "bg-slate-50"}`}>
+      {/* Decorative background element */}
+      <div className={`absolute top-1/2 -translate-y-1/2 ${isEven ? 'right-0 translate-x-1/3' : 'left-0 -translate-x-1/3'} w-96 h-96 bg-primary/5 rounded-full blur-3xl`} />
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className={`flex flex-col ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"} gap-16 items-center`}>
+          <div className={`lg:w-1/2 w-full ${isVisible ? (isEven ? "animate-slide-right" : "animate-slide-left") : "opacity-0"}`}>
+            <div className="relative group">
+              <div className="absolute -inset-4 bg-gradient-to-r from-accent/20 to-primary/20 rounded-3xl blur-lg opacity-0 group-hover:opacity-100 transition duration-1000 group-hover:duration-200" />
+              <img src={section.image} alt={section.title} className="relative rounded-2xl shadow-2xl w-full object-cover h-[400px] md:h-[500px] transform transition-transform duration-700 group-hover:scale-[1.02]" loading="lazy" />
+            </div>
           </div>
-          <div className={`lg:w-1/2 ${isVisible ? (isEven ? "animate-slide-left" : "animate-slide-right") : "opacity-0"}`}>
-            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">{section.title}</h3>
-            <p className="text-muted-foreground leading-relaxed mb-6">{section.content}</p>
-            <Link to="/get-a-quote" className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:opacity-90 transition-opacity">
-              View Details
+          <div className={`lg:w-1/2 w-full ${isVisible ? (isEven ? "animate-slide-left" : "animate-slide-right") : "opacity-0"}`}>
+            <span className="text-accent font-bold tracking-widest uppercase text-sm mb-3 block">{section.subtitle}</span>
+            <h3 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 leading-tight">{section.title}</h3>
+            <p className="text-slate-600 text-lg leading-relaxed mb-8">{section.content}</p>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+              {section.bullets.map((bullet, i) => (
+                <div key={i} className="flex items-center gap-3">
+                  <CheckCircle2 className="h-5 w-5 text-primary shrink-0" />
+                  <span className="text-slate-700 font-medium">{bullet}</span>
+                </div>
+              ))}
+            </div>
+
+            <Link to="/get-a-quote" className="group inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-lg font-bold hover:bg-accent transition-all shadow-lg hover:shadow-xl">
+              Get Started <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
         </div>
@@ -80,7 +110,10 @@ const ServicesPage = () => {
     if (location.hash) {
       setTimeout(() => {
         const el = document.querySelector(location.hash);
-        if (el) el.scrollIntoView({ behavior: "smooth" });
+        if (el) {
+          const y = el.getBoundingClientRect().top + window.scrollY - 100;
+          window.scrollTo({ top: y, behavior: "smooth" });
+        }
       }, 100);
     }
   }, [location.hash]);
@@ -88,32 +121,36 @@ const ServicesPage = () => {
   const { ref: introRef, isVisible: introVisible } = useScrollAnimation();
 
   return (
-    <>
-      <section className="relative h-[50vh] min-h-[350px] overflow-hidden">
-        <img src={hero2} alt="Warehouse Services" className="w-full h-full object-cover" width={1920} height={800} />
-        <div className="absolute inset-0 bg-hero-overlay/60" />
-        <div className="relative z-10 h-full flex items-center justify-center text-center px-4">
-          <div className="animate-fade-in-up">
-            <h1 className="text-3xl md:text-5xl font-bold text-primary-foreground mb-4">Our Services</h1>
-            <p className="text-lg text-primary-foreground/80">Flexible warehouse solutions designed to meet diverse business needs</p>
+    <div className="overflow-hidden">
+      <section className="relative h-[60vh] min-h-[400px] overflow-hidden">
+        <img src={hero2} alt="Warehouse Services" className="w-full h-full object-cover scale-105 transform animate-fade-in-up duration-1000" width={1920} height={800} />
+        <div className="absolute inset-0 bg-gray-900/70" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 container mx-auto">
+          <div className="animate-fade-in-up max-w-3xl">
+            <span className="inline-block py-1 px-3 rounded-full bg-white/10 text-white font-semibold text-sm mb-4 border border-white/20 tracking-wider uppercase backdrop-blur-sm">What we do</span>
+            <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6">Our Services</h1>
+            <p className="text-xl text-gray-200 font-light">Flexible warehouse solutions designed to meet diverse and growing business needs.</p>
           </div>
         </div>
       </section>
 
-      <section ref={introRef} className="py-16 bg-background">
-        <div className={`container mx-auto px-4 max-w-3xl text-center ${introVisible ? "animate-slide-up" : "opacity-0"}`}>
-          <p className="text-muted-foreground text-lg leading-relaxed">
+      <section ref={introRef} className="py-20 bg-white relative z-20 -mt-10 mx-4 md:mx-auto max-w-5xl rounded-3xl shadow-xl border border-slate-100">
+        <div className={`container mx-auto px-8 md:px-16 text-center ${introVisible ? "animate-slide-up" : "opacity-0"}`}>
+          <p className="text-slate-600 text-xl md:text-2xl font-light leading-relaxed">
             We provide adaptable warehouse solutions tailored to your operational requirements. From short-term flexibility to long-term stability, climate-controlled environments to fully customized setups — explore our comprehensive range of services.
           </p>
         </div>
       </section>
 
-      {sections.map((s, i) => (
-        <SectionBlock key={s.id} section={s} index={i} />
-      ))}
+      <div className="py-10">
+        {sections.map((s, i) => (
+          <SectionBlock key={s.id} section={s} index={i} />
+        ))}
+      </div>
 
       <CTASection heading="Looking for the right storage solution for your business?" buttonText="Get in Touch" />
-    </>
+    </div>
   );
 };
 
