@@ -105,7 +105,7 @@ const WhoWeServePage = () => {
       setTimeout(() => {
         const el = document.querySelector(location.hash);
         if (el) {
-          const y = el.getBoundingClientRect().top + window.scrollY - 100;
+          const y = el.getBoundingClientRect().top + window.scrollY - 120;
           window.scrollTo({ top: y, behavior: "smooth" });
         }
       }, 100);
@@ -122,9 +122,14 @@ const WhoWeServePage = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-80" />
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 container mx-auto">
           <div className="animate-fade-in-up">
-            <span className="inline-block py-1 px-3 rounded-full bg-accent/20 text-white font-semibold text-sm mb-4 border border-accent/20 tracking-wider uppercase">Industries</span>
-            <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6">Who We Serve</h1>
-            <p className="text-xl text-gray-200 font-light max-w-2xl mx-auto">Flexible warehouse solutions tailored to diverse business requirements.</p>
+            <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6">Explore Who We Serve</h1>
+            <p className="text-xl md:text-2xl text-gray-200 font-light max-w-2xl mx-auto mb-8">Flexible warehouse solutions for diverse business needs</p>
+            <a 
+              href="#retail" 
+              className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-white rounded-lg font-bold hover:bg-primary transition-all shadow-lg hover:shadow-xl"
+            >
+              View Industries <ArrowRight className="h-5 w-5" />
+            </a>
           </div>
         </div>
       </section>

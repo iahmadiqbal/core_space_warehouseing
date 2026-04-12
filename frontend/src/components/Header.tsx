@@ -49,7 +49,7 @@ const Header = () => {
             Home
           </Link>
 
-          <div
+          <div 
             className="relative"
             onMouseEnter={() => setOpenDropdown("serve")}
             onMouseLeave={() => setOpenDropdown(null)}
@@ -63,7 +63,7 @@ const Header = () => {
             </button>
 
             {openDropdown === "serve" && (
-              <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-lg border border-gray-200 py-2">
+              <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
                 {whoWeServeItems.map((item) => (
                   <Link
                     key={item.label}
@@ -78,7 +78,7 @@ const Header = () => {
             )}
           </div>
 
-          <div
+          <div 
             className="relative"
             onMouseEnter={() => setOpenDropdown("services")}
             onMouseLeave={() => setOpenDropdown(null)}
@@ -92,7 +92,7 @@ const Header = () => {
             </button>
 
             {openDropdown === "services" && (
-              <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-lg border border-gray-200 py-2">
+              <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
                 {servicesItems.map((item) => (
                   <Link
                     key={item.label}

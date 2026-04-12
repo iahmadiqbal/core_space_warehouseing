@@ -53,9 +53,6 @@ const HeroSlideshow = () => {
             <Link to="/get-a-quote" className="px-8 py-4 bg-accent text-accent-foreground rounded-lg text-lg font-semibold hover:bg-white hover:text-black transition-all shadow-lg hover:shadow-xl flex items-center gap-2">
               Get a Quote <ArrowRight className="h-5 w-5" />
             </Link>
-            <Link to="/services" className="px-8 py-4 bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-lg text-lg font-semibold hover:bg-white/20 transition-all">
-              Explore Services
-            </Link>
           </div>
         </div>
       </div>

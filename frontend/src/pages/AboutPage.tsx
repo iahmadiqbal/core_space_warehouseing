@@ -1,5 +1,5 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { CheckCircle2, ShoppingCart, Factory, Ship, UtensilsCrossed, Building2, Eye, Target, ArrowRight } from "lucide-react";
+import { CheckCircle2, ShoppingCart, Factory, Ship, UtensilsCrossed, Building2, Rocket, Telescope, ArrowRight } from "lucide-react";
 import CTASection from "@/components/CTASection";
 import aboutHero from "@/assets/about-hero.jpg";
 import hero3 from "@/assets/hero-warehouse-3.jpg";
@@ -22,11 +22,11 @@ const AboutPage = () => {
   ];
 
   const industries = [
-    { icon: ShoppingCart, label: "Retail & E-commerce" },
-    { icon: Factory, label: "Manufacturing & Industrial" },
-    { icon: Ship, label: "Importers & Exporters" },
-    { icon: UtensilsCrossed, label: "Food & Beverage" },
-    { icon: Building2, label: "Other Businesses" },
+    { icon: ShoppingCart, label: "Retail & E-commerce", desc: "Fast fulfillment and scalable inventory solutions for online stores and retail operations." },
+    { icon: Factory, label: "Manufacturing & Industrial", desc: "Heavy-duty storage for raw materials, equipment, and finished goods with reinforced infrastructure." },
+    { icon: Ship, label: "Importers & Exporters", desc: "Strategic cross-border staging areas for efficient container handling and redistribution." },
+    { icon: UtensilsCrossed, label: "Food & Beverage", desc: "Temperature-controlled facilities meeting strict hygiene and food safety compliance standards." },
+    { icon: Building2, label: "Other Businesses", desc: "Customizable warehouse configurations for healthcare, tech, automotive, and specialized sectors." },
   ];
 
   return (
@@ -49,9 +49,10 @@ const AboutPage = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-16 items-center">
             <div className={`lg:w-1/2 ${whoVis ? "animate-slide-right" : "opacity-0"}`}>
-              <div className="grid grid-cols-2 gap-4">
-                <img src={businessImg} alt="Warehouse" className="rounded-2xl shadow-xl w-full h-[300px] object-cover" />
-                <img src={hero3} alt="Warehouse operations" className="rounded-2xl shadow-xl w-full h-[300px] object-cover mt-8" />
+              <div className="relative h-[450px]">
+                <img src={businessImg} alt="Warehouse" className="absolute top-0 left-0 w-3/4 h-[320px] rounded-3xl shadow-2xl object-cover z-10 border-4 border-white transition-transform duration-700 hover:scale-105" />
+                <img src={hero3} alt="Warehouse operations" className="absolute bottom-0 right-0 w-2/3 h-[280px] rounded-3xl shadow-xl object-cover z-20 border-4 border-white transition-transform duration-700 hover:scale-105" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-primary/5 rounded-full blur-3xl z-0" />
               </div>
             </div>
             <div className={`lg:w-1/2 ${whoVis ? "animate-slide-left" : "opacity-0"}`}>
@@ -64,13 +65,13 @@ const AboutPage = () => {
                 Our mission is simple: provide the right space, at the right time, at the right price. Whether you're a small business looking for temporary storage or a large enterprise requiring dedicated facilities, we are committed to being your dependable partner.
               </p>
               <div className="flex gap-4">
-                <div className="bg-slate-50 p-4 rounded-xl border border-slate-100 flex-1 text-center">
-                  <p className="text-3xl font-extrabold text-primary mb-1">5M+</p>
-                  <p className="text-slate-500 text-sm font-medium">Sq. Ft. Managed</p>
+                <div className="bg-white p-6 rounded-2xl border border-slate-100 flex-1 text-center shadow-md hover:shadow-xl hover:-translate-y-2 hover:border-primary/30 transition-all duration-300">
+                  <p className="text-4xl font-black text-primary mb-2">5M+</p>
+                  <p className="text-slate-500 text-sm font-semibold uppercase tracking-wider">Sq. Ft. Managed</p>
                 </div>
-                <div className="bg-slate-50 p-4 rounded-xl border border-slate-100 flex-1 text-center">
-                  <p className="text-3xl font-extrabold text-primary mb-1">200+</p>
-                  <p className="text-slate-500 text-sm font-medium">B2B Clients</p>
+                <div className="bg-white p-6 rounded-2xl border border-slate-100 flex-1 text-center shadow-md hover:shadow-xl hover:-translate-y-2 hover:border-primary/30 transition-all duration-300">
+                  <p className="text-4xl font-black text-primary mb-2">200+</p>
+                  <p className="text-slate-500 text-sm font-semibold uppercase tracking-wider">B2B Clients</p>
                 </div>
               </div>
             </div>
@@ -87,21 +88,21 @@ const AboutPage = () => {
             <h3 className={`text-3xl md:text-5xl font-extrabold ${mvVis ? "animate-slide-down" : "opacity-0"}`}>Mission & Vision</h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div className={`bg-slate-800/80 backdrop-blur-md p-10 rounded-3xl border border-slate-700 hover:border-primary transition-colors ${mvVis ? "animate-slide-right" : "opacity-0"}`}>
-              <div className="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center mb-6">
-                <Target className="h-8 w-8 text-primary" />
+            <div className={`bg-slate-800/80 backdrop-blur-md p-10 rounded-3xl border border-slate-700 transition-all duration-300 shadow-2xl hover:shadow-[0_0_40px_rgba(59,130,246,0.3)] hover:-translate-y-3 group hover:border-blue-500/50 ${mvVis ? "animate-slide-right" : "opacity-0"}`}>
+              <div className="w-24 h-24 bg-blue-500/20 rounded-full flex items-center justify-center mb-8 mx-auto ring-8 ring-blue-500/10 group-hover:bg-blue-500/30 group-hover:scale-110 transition-all duration-500">
+                <Rocket className="h-14 w-14 text-blue-400 group-hover:text-blue-300 group-hover:animate-bounce" />
               </div>
-              <h3 className="text-3xl font-bold mb-4">Our Mission</h3>
-              <p className="text-slate-400 text-lg leading-relaxed">
+              <h3 className="text-3xl font-extrabold mb-4 text-center">Our Mission</h3>
+              <p className="text-slate-300 text-lg leading-relaxed text-center">
                 To provide accessible, flexible, and secure warehouse solutions that empower businesses to operate efficiently and grow without storage constraints. We aim to simplify warehousing by offering transparent pricing, easy onboarding, and dedicated support for every client.
               </p>
             </div>
-            <div className={`bg-slate-800/80 backdrop-blur-md p-10 rounded-3xl border border-slate-700 hover:border-accent transition-colors ${mvVis ? "animate-slide-left" : "opacity-0"}`}>
-              <div className="w-16 h-16 bg-accent/20 rounded-2xl flex items-center justify-center mb-6">
-                <Eye className="h-8 w-8 text-accent" />
+            <div className={`bg-slate-800/80 backdrop-blur-md p-10 rounded-3xl border border-slate-700 transition-all duration-300 shadow-2xl hover:shadow-[0_0_40px_rgba(245,158,11,0.3)] hover:-translate-y-3 group hover:border-amber-500/50 ${mvVis ? "animate-slide-left" : "opacity-0"}`}>
+              <div className="w-24 h-24 bg-amber-500/20 rounded-full flex items-center justify-center mb-8 mx-auto ring-8 ring-amber-500/10 group-hover:bg-amber-500/30 group-hover:scale-110 transition-all duration-500">
+                <Telescope className="h-14 w-14 text-amber-400 group-hover:text-amber-300 group-hover:animate-pulse" />
               </div>
-              <h3 className="text-3xl font-bold mb-4">Our Vision</h3>
-              <p className="text-slate-400 text-lg leading-relaxed">
+              <h3 className="text-3xl font-extrabold mb-4 text-center">Our Vision</h3>
+              <p className="text-slate-300 text-lg leading-relaxed text-center">
                 To become Canada's most trusted and preferred warehousing partner by continuously innovating our services, expanding our facility network, and maintaining the highest standards of quality, security, and customer satisfaction in every warehouse we operate.
               </p>
             </div>
@@ -110,29 +111,25 @@ const AboutPage = () => {
       </section>
 
       {/* What We Offer Highlights */}
-      <section ref={offerRef} className="py-24 bg-slate-50 border-b border-slate-200">
+      <section ref={offerRef} className="py-24 bg-slate-50 border-y border-slate-200">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row gap-16 items-center">
-            <div className={`lg:w-1/3 ${offerVis ? "animate-slide-right" : "opacity-0"}`}>
-              <h2 className="text-accent font-bold tracking-widest uppercase text-sm mb-3">Capabilities</h2>
-              <h3 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">What We Bring to the Table</h3>
-              <p className="text-slate-600 mb-8">An end-to-end suite of warehousing options designed for versatility.</p>
-              <Link to="/services" className="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 text-white rounded-lg font-bold hover:bg-primary transition-colors">
-                View Services <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-            <div className={`lg:w-2/3 ${offerVis ? "animate-slide-left" : "opacity-0"}`}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {offers.map((item, i) => (
-                  <div key={i} className="flex items-center gap-4 bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-                    <div className="p-3 bg-primary/10 rounded-lg text-primary">
-                      <CheckCircle2 className="h-6 w-6" />
-                    </div>
-                    <span className="text-slate-800 font-bold text-lg">{item}</span>
-                  </div>
-                ))}
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 className="text-accent font-bold tracking-widest uppercase text-sm mb-3">Capabilities</h2>
+            <h3 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6">What We Bring to the Table</h3>
+            <p className="text-slate-600 text-lg mb-8">An end-to-end suite of warehousing options designed for versatility.</p>
+            <Link to="/services" className="inline-flex items-center gap-2 px-8 py-4 bg-slate-900 text-white rounded-xl font-bold hover:bg-primary hover:shadow-lg transition-all hover:-translate-y-1">
+              View Services <ArrowRight className="h-5 w-5" />
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {offers.map((item, i) => (
+              <div key={i} className={`flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-primary/40 transition-all duration-300 hover:-translate-y-2 cursor-pointer group ${offerVis ? "animate-fade-in-up" : "opacity-0"}`} style={{ animationDelay: `${i * 100}ms` }}>
+                <div className="bg-primary/10 p-2 rounded-xl text-primary shrink-0 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                  <CheckCircle2 className="h-6 w-6" />
+                </div>
+                <span className="text-slate-800 font-bold text-lg pt-1 group-hover:text-primary transition-colors duration-300">{item}</span>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -140,16 +137,28 @@ const AboutPage = () => {
       {/* Who We Serve - Minimalist Callout */}
       <section ref={serveRef} className="py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className={`text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 ${serveVis ? "animate-slide-down" : "opacity-0"}`}>Supporting Diverse Industries</h2>
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className={`text-accent font-bold tracking-widest uppercase text-sm mb-3 ${serveVis ? "animate-slide-down" : "opacity-0"}`}>Sectors</h2>
+            <h3 className={`text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 ${serveVis ? "animate-slide-down" : "opacity-0"}`}>Supporting Diverse Industries</h3>
+            <p className={`text-slate-600 text-lg leading-relaxed ${serveVis ? "animate-slide-up" : "opacity-0"}`}>
+              We provide specialized warehouse infrastructure tailored to your industry's unique requirements, ensuring your inventory is handled with precision and care.
+            </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-5xl mx-auto">
-            {industries.map((item, i) => (
-              <div key={i} className={`flex flex-col items-center justify-center p-8 bg-slate-50 hover:bg-primary hover:text-white transition-all duration-300 rounded-2xl group border border-slate-100 cursor-pointer ${serveVis ? "animate-fade-in-up" : "opacity-0"}`} style={{ animationDelay: `${i * 100}ms` }}>
-                <item.icon className="h-10 w-10 text-primary group-hover:text-white mb-4 transition-colors" />
-                <span className="text-sm font-bold text-center">{item.label}</span>
-              </div>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {industries.map((item, i) => {
+              const anims = ["animate-slide-right", "animate-slide-up", "animate-slide-down", "animate-slide-up", "animate-slide-left", "animate-fade-in-up"];
+              const animClass = serveVis ? anims[i % 6] : "opacity-0";
+              return (
+                <div key={i} className={`flex flex-col items-center p-8 bg-white transition-all duration-500 rounded-3xl group border-2 border-transparent hover:border-primary/30 cursor-pointer shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-3 relative overflow-hidden ${animClass}`} style={{ animationDelay: `${i * 100}ms` }}>
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="relative z-10 w-20 h-20 bg-slate-50 group-hover:bg-white rounded-full shadow-sm flex items-center justify-center mb-5 ring-1 ring-slate-100 group-hover:ring-primary/20 group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-500">
+                    <item.icon className="h-8 w-8 text-slate-400 group-hover:text-primary transition-colors duration-500" />
+                  </div>
+                  <h4 className="relative z-10 text-xl font-extrabold text-center text-slate-800 group-hover:text-primary transition-colors duration-500 mb-3">{item.label}</h4>
+                  <p className="relative z-10 text-slate-600 text-sm text-center leading-relaxed">{item.desc}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

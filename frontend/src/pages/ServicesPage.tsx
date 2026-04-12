@@ -111,7 +111,7 @@ const ServicesPage = () => {
       setTimeout(() => {
         const el = document.querySelector(location.hash);
         if (el) {
-          const y = el.getBoundingClientRect().top + window.scrollY - 100;
+          const y = el.getBoundingClientRect().top + window.scrollY - 120;
           window.scrollTo({ top: y, behavior: "smooth" });
         }
       }, 100);
@@ -128,9 +128,14 @@ const ServicesPage = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 container mx-auto">
           <div className="animate-fade-in-up max-w-3xl">
-            <span className="inline-block py-1 px-3 rounded-full bg-white/10 text-white font-semibold text-sm mb-4 border border-white/20 tracking-wider uppercase backdrop-blur-sm">What we do</span>
-            <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6">Our Services</h1>
-            <p className="text-xl text-gray-200 font-light">Flexible warehouse solutions designed to meet diverse and growing business needs.</p>
+            <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6">Explore Our Services</h1>
+            <p className="text-xl md:text-2xl text-gray-200 font-light mb-8">Flexible warehouse solutions designed to meet diverse business needs</p>
+            <a 
+              href="#business-warehouses" 
+              className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-lg font-bold hover:bg-accent transition-all shadow-lg hover:shadow-xl"
+            >
+              View Services <ArrowRight className="h-5 w-5" />
+            </a>
           </div>
         </div>
       </section>
