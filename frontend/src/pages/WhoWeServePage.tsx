@@ -59,7 +59,7 @@ const SectionBlock = ({ section, index }: { section: typeof sections[0]; index: 
   const isEven = index % 2 === 0;
 
   return (
-    <section ref={ref} id={section.id} className={`py-24 relative ${index % 2 === 0 ? "bg-white" : "bg-slate-50 border-y border-slate-200"}`}>
+    <section ref={ref} id={section.id} className={`py-12 md:py-24 relative ${index % 2 === 0 ? "bg-white" : "bg-slate-50 border-y border-slate-200"}`}>
       <div className="container mx-auto px-4">
         <div className={`flex flex-col ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"} gap-12 lg:gap-20 items-center`}>
           <div className={`lg:w-1/2 w-full ${isVisible ? (isEven ? "animate-slide-right" : "animate-slide-left") : "opacity-0"}`}>
@@ -116,7 +116,7 @@ const WhoWeServePage = () => {
 
   return (
     <div className="overflow-hidden">
-      <section className="relative h-[60vh] min-h-[400px] overflow-hidden">
+      <section className="relative h-[50vh] min-h-[350px] md:h-[60vh] md:min-h-[400px] overflow-hidden">
         <img src={hero1} alt="Warehouse" className="w-full h-full object-cover scale-105 transform animate-fade-in-up duration-1000" width={1920} height={800} />
         <div className="absolute inset-0 bg-primary/80 mix-blend-multiply" />
         <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-80" />
@@ -134,7 +134,7 @@ const WhoWeServePage = () => {
         </div>
       </section>
 
-      <section ref={introRef} className="py-24 bg-white">
+      <section ref={introRef} className="py-12 md:py-24 bg-white">
         <div className={`container mx-auto px-4 max-w-4xl text-center ${introVisible ? "animate-slide-up" : "opacity-0"}`}>
           <h2 className="text-3xl font-bold text-slate-900 mb-6">Designed For Every Sector</h2>
           <p className="text-slate-600 text-xl font-light leading-relaxed">

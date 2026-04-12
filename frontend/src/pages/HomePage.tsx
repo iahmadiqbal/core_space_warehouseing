@@ -38,7 +38,7 @@ const HeroSlideshow = () => {
   }, []);
 
   return (
-    <section className="relative h-[80vh] min-h-[600px] overflow-hidden">
+    <section className="relative h-[65vh] min-h-[450px] md:h-[80vh] md:min-h-[600px] overflow-hidden">
       {slides.map((s, i) => (
         <div key={i} className={`absolute inset-0 transition-opacity duration-1000 ${i === current ? "opacity-100" : "opacity-0"}`}>
           <img src={s.img} alt="Warehouse" className="w-full h-full object-cover scale-105 transform transition-transform duration-[10000ms] ease-out" width={1920} height={1080} />
@@ -68,7 +68,7 @@ const HeroSlideshow = () => {
 const WhoWeAreSection = () => {
   const { ref, isVisible } = useScrollAnimation();
   return (
-    <section ref={ref} className="py-24 bg-white">
+    <section ref={ref} className="py-12 md:py-24 bg-white">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           <div className={`lg:w-1/2 ${isVisible ? "animate-slide-right" : "opacity-0"}`}>
@@ -108,7 +108,7 @@ const HowItWorksSection = () => {
     { num: "4", title: "Confirm & Book", desc: "Select your ideal space, complete the transparent paperwork, and move your inventory in." },
   ];
   return (
-    <section ref={ref} className="py-24 bg-slate-50 border-y border-slate-200">
+    <section ref={ref} className="py-12 md:py-24 bg-slate-50 border-y border-slate-200">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h3 className={`text-4xl md:text-5xl font-extrabold text-slate-900 ${isVisible ? "animate-slide-down" : "opacity-0"}`}>How It Works</h3>
@@ -140,7 +140,7 @@ const WhoWeServeSection = () => {
     { icon: Building2, label: "Other Businesses", img: customImg, desc: "Customizable configurations tailored to healthcare, tech, automotive, and any other specialized sector. Whether it's document archiving or pharmaceutical staging, we adapt the facility footprint directly to your bespoke corporate requirements." },
   ];
   return (
-    <section ref={ref} className="py-24 bg-white">
+    <section ref={ref} className="py-12 md:py-24 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h3 className={`text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 ${isVisible ? "animate-slide-down" : "opacity-0"}`}>Who We Serve</h3>
@@ -189,7 +189,7 @@ const ServicesOverviewSection = () => {
     { img: customImg, icon: Settings, title: "Custom Solutions", desc: "Fully customized warehouse configurations tailored to your unique requirements. We can install specialized racking, build in-warehouse office spaces, or establish dedicated staging zones." },
   ];
   return (
-    <section ref={ref} className="py-24 bg-slate-900 text-white">
+    <section ref={ref} className="py-12 md:py-24 bg-slate-900 text-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 max-w-2xl mx-auto">
           <h2 className={`text-accent font-bold tracking-widest uppercase text-sm mb-3 ${isVisible ? "animate-slide-down" : "opacity-0"}`}>What we do</h2>
@@ -255,7 +255,7 @@ const WhyChooseUsSection = () => {
   ];
 
   return (
-    <section ref={ref} className="py-24 bg-white overflow-hidden relative">
+    <section ref={ref} className="py-12 md:py-24 bg-white overflow-hidden relative">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row gap-16 items-center">
           

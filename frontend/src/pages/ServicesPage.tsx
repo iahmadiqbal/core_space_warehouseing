@@ -67,7 +67,7 @@ const SectionBlock = ({ section, index }: { section: typeof sections[0]; index: 
   const isEven = index % 2 === 0;
 
   return (
-    <section ref={ref} id={section.id} className={`py-24 relative overflow-hidden ${index % 2 === 0 ? "bg-white" : "bg-slate-50"}`}>
+    <section ref={ref} id={section.id} className={`py-12 md:py-24 relative overflow-hidden ${index % 2 === 0 ? "bg-white" : "bg-slate-50"}`}>
       {/* Decorative background element */}
       <div className={`absolute top-1/2 -translate-y-1/2 ${isEven ? 'right-0 translate-x-1/3' : 'left-0 -translate-x-1/3'} w-96 h-96 bg-primary/5 rounded-full blur-3xl`} />
       
@@ -122,7 +122,7 @@ const ServicesPage = () => {
 
   return (
     <div className="overflow-hidden">
-      <section className="relative h-[60vh] min-h-[400px] overflow-hidden">
+      <section className="relative h-[50vh] min-h-[350px] md:h-[60vh] md:min-h-[400px] overflow-hidden">
         <img src={hero2} alt="Warehouse Services" className="w-full h-full object-cover scale-105 transform animate-fade-in-up duration-1000" width={1920} height={800} />
         <div className="absolute inset-0 bg-gray-900/70" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
@@ -140,7 +140,7 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      <section ref={introRef} className="py-20 bg-white relative z-20 -mt-10 mx-4 md:mx-auto max-w-5xl rounded-3xl shadow-xl border border-slate-100">
+      <section ref={introRef} className="py-10 md:py-20 bg-white relative z-20 -mt-10 mx-4 md:mx-auto max-w-5xl rounded-3xl shadow-xl border border-slate-100">
         <div className={`container mx-auto px-8 md:px-16 text-center ${introVisible ? "animate-slide-up" : "opacity-0"}`}>
           <p className="text-slate-600 text-xl md:text-2xl font-light leading-relaxed">
             We provide adaptable warehouse solutions tailored to your operational requirements. From short-term flexibility to long-term stability, climate-controlled environments to fully customized setups — explore our comprehensive range of services.
