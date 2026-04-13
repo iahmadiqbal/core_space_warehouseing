@@ -3,20 +3,20 @@ import { Link, useLocation } from "react-router-dom";
 import { ChevronDown, Menu, X } from "lucide-react";
 
 const whoWeServeItems = [
-  { label: "Retail & E-commerce", path: "/who-we-serve" },
-  { label: "Manufacturing & Industrial", path: "/who-we-serve" },
-  { label: "Importers & Exporters", path: "/who-we-serve" },
-  { label: "Food & Beverage", path: "/who-we-serve" },
-  { label: "Other Businesses", path: "/who-we-serve" },
+  { label: "Retail & E-commerce", path: "/who-we-serve#retail" },
+  { label: "Manufacturing & Industrial", path: "/who-we-serve#manufacturing" },
+  { label: "Importers & Exporters", path: "/who-we-serve#importers" },
+  { label: "Food & Beverage", path: "/who-we-serve#food" },
+  { label: "Other Businesses", path: "/who-we-serve#other" },
 ];
 
 const servicesItems = [
-  { label: "Business Warehouses", path: "/services" },
-  { label: "Short-Term Rentals", path: "/services" },
-  { label: "Long-Term Rentals", path: "/services" },
-  { label: "Climate-Controlled Units", path: "/services" },
-  { label: "Inventory Management", path: "/services" },
-  { label: "Customized Storage Solutions", path: "/services" },
+  { label: "Business Warehouses", path: "/services#business-warehouses" },
+  { label: "Short-Term Rentals", path: "/services#short-term" },
+  { label: "Long-Term Rentals", path: "/services#long-term" },
+  { label: "Climate-Controlled Units", path: "/services#climate" },
+  { label: "Inventory Management", path: "/services#inventory" },
+  { label: "Customized Storage Solutions", path: "/services#custom" },
 ];
 
 const Header = () => {
@@ -65,7 +65,11 @@ const Header = () => {
             </button>
 
             {openDropdown === "serve" && (
-              <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-lg border border-gray-200 py-2">
+              <div 
+                className="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-lg border border-gray-200 py-2"
+                onMouseEnter={() => setOpenDropdown("serve")}
+                onMouseLeave={() => setOpenDropdown(null)}
+              >
                 {whoWeServeItems.map((item) => (
                   <Link
                     key={item.label}
@@ -94,7 +98,11 @@ const Header = () => {
             </button>
 
             {openDropdown === "services" && (
-              <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-lg border border-gray-200 py-2">
+              <div 
+                className="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-lg border border-gray-200 py-2"
+                onMouseEnter={() => setOpenDropdown("services")}
+                onMouseLeave={() => setOpenDropdown(null)}
+              >
                 {servicesItems.map((item) => (
                   <Link
                     key={item.label}

@@ -116,8 +116,8 @@ const HowItWorksSection = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {steps.map((s, i) => (
-            <div key={i} className={`relative bg-white p-8 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 hover:border-primary/30 transition-all ${isVisible ? "animate-slide-down" : "opacity-0"}`} style={{ animationDelay: `${i * 150}ms` }}>
-              <div className="w-14 h-14 rounded-full bg-primary/10 text-primary flex items-center justify-center text-2xl font-black mb-6">
+            <div key={i} className={`relative bg-white p-8 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 hover:border-primary/30 hover:shadow-xl transition-all duration-300 ${isVisible ? "animate-slide-down" : "opacity-0"}`} style={{ animationDelay: `${i * 150}ms` }}>
+              <div className="w-14 h-14 rounded-full bg-primary/10 text-primary flex items-center justify-center text-2xl font-black mb-6 transition-all duration-300 hover:bg-primary hover:text-white">
                 {s.num}
               </div>
               <h4 className="text-xl font-bold text-slate-900 mb-3">{s.title}</h4>
@@ -150,25 +150,25 @@ const WhoWeServeSection = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {industries.map((item, i) => (
-            <Link to="/who-we-serve" key={i} className={`group flex flex-col bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all border border-slate-100 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`} style={{ animationDelay: `${i * 100}ms` }}>
+            <Link to="/who-we-serve" key={i} className={`group flex flex-col bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-shadow duration-300 border border-slate-100 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`} style={{ animationDelay: `${i * 100}ms` }}>
               
               {/* Image Top Half */}
               <div className="relative h-60 overflow-hidden shrink-0">
-                <img src={item.img} alt={item.label} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-primary/20 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity" />
+                <img src={item.img} alt={item.label} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-primary/20 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
 
               {/* Content Bottom Half */}
               <div className="p-8 flex flex-col flex-1">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="bg-primary/10 p-2.5 rounded-lg text-primary">
+                  <div className="bg-primary/10 p-2.5 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                     <item.icon className="h-6 w-6" />
                   </div>
                   <span className="text-2xl font-bold text-slate-900">{item.label}</span>
                 </div>
                 <p className="text-slate-600 leading-relaxed mb-6 flex-1">{item.desc}</p>
                 
-                <div className="mt-auto flex items-center gap-2 text-accent font-bold text-sm tracking-widest uppercase transition-all group-hover:gap-3">
+                <div className="mt-auto flex items-center gap-2 text-accent font-bold text-sm tracking-widest uppercase transition-all duration-300 group-hover:gap-3">
                   Read More <ArrowRight className="h-4 w-4" />
                 </div>
               </div>
@@ -203,12 +203,12 @@ const ServicesOverviewSection = () => {
             const anims = ["animate-slide-right", "animate-slide-left", "animate-slide-down", "animate-fade-in-up"];
             const animClass = isVisible ? anims[i % 4] : "opacity-0";
             return (
-              <div key={i} className={`group flex flex-col bg-slate-800 rounded-3xl overflow-hidden border border-slate-700 hover:border-accent transition-all hover:shadow-2xl hover:shadow-accent/20 ${animClass}`} style={{ animationDelay: `${i * 100}ms` }}>
+              <div key={i} className={`group flex flex-col bg-slate-800 rounded-3xl overflow-hidden border border-slate-700 hover:border-accent transition-all duration-300 hover:shadow-2xl hover:shadow-accent/20 ${animClass}`} style={{ animationDelay: `${i * 100}ms` }}>
                 
                 {/* Image Top Half */}
                 <div className="relative h-64 overflow-hidden shrink-0">
-                  <img src={s.img} alt={s.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                  <div className="absolute inset-0 bg-black/30 group-hover:bg-transparent transition-all" />
+                  <img src={s.img} alt={s.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <div className="absolute inset-0 bg-black/30 group-hover:bg-transparent transition-all duration-300" />
                 </div>
                 
                 {/* Content Bottom Half */}
@@ -216,8 +216,8 @@ const ServicesOverviewSection = () => {
                   <h4 className="text-2xl font-bold mb-4 text-white">{s.title}</h4>
                   <p className="text-white text-base mb-6 leading-relaxed flex-1">{s.desc}</p>
                   
-                  <Link to="/services" className="text-accent text-sm font-bold flex items-center gap-2 uppercase tracking-widest hover:text-white transition-colors mt-auto">
-                    Learn More <ArrowRight className="h-4 w-4 group-hover:translate-x-2 transition-transform" />
+                  <Link to="/services" className="text-accent text-sm font-bold flex items-center gap-2 uppercase tracking-widest hover:text-white transition-colors duration-300 mt-auto">
+                    Learn More <ArrowRight className="h-4 w-4 group-hover:translate-x-2 transition-transform duration-300" />
                   </Link>
                 </div>
               </div>
@@ -278,7 +278,7 @@ const WhyChooseUsSection = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 relative z-10">
               {points.map((p, i) => (
                 <div key={i} className={`bg-white p-8 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 hover:border-accent hover:shadow-xl transition-all duration-300 ${i % 2 !== 0 ? 'sm:mt-12' : ''}`}>
-                  <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6 shadow-sm">
+                  <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6 shadow-sm transition-all duration-300 hover:bg-primary hover:text-white">
                     <p.icon className="h-7 w-7" />
                   </div>
                   <h4 className="text-xl font-bold text-slate-900 mb-3">{p.title}</h4>

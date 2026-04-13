@@ -59,7 +59,7 @@ const SectionBlock = ({ section, index }: { section: typeof sections[0]; index: 
   const isEven = index % 2 === 0;
 
   return (
-    <section ref={ref} id={section.id} className={`py-12 md:py-24 relative ${index % 2 === 0 ? "bg-white" : "bg-slate-50 border-y border-slate-200"}`}>
+    <section ref={ref} id={section.id} className={`py-12 md:py-24 relative scroll-mt-24 ${index % 2 === 0 ? "bg-white" : "bg-slate-50 border-y border-slate-200"}`}>
       <div className="container mx-auto px-4">
         <div className={`flex flex-col ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"} gap-12 lg:gap-20 items-center`}>
           <div className={`lg:w-1/2 w-full ${isVisible ? (isEven ? "animate-slide-right" : "animate-slide-left") : "opacity-0"}`}>
@@ -105,12 +105,15 @@ const WhoWeServePage = () => {
       setTimeout(() => {
         const el = document.querySelector(location.hash);
         if (el) {
-          const y = el.getBoundingClientRect().top + window.scrollY - 120;
+          const headerHeight = 100; // Header height + extra padding
+          const y = el.getBoundingClientRect().top + window.scrollY - headerHeight;
           window.scrollTo({ top: y, behavior: "smooth" });
         }
-      }, 100);
+      }, 300);
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
-  }, [location.hash]);
+  }, [location.hash, location.pathname]);
 
   const { ref: introRef, isVisible: introVisible } = useScrollAnimation();
 

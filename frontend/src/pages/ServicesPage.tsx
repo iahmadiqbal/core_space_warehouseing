@@ -67,7 +67,7 @@ const SectionBlock = ({ section, index }: { section: typeof sections[0]; index: 
   const isEven = index % 2 === 0;
 
   return (
-    <section ref={ref} id={section.id} className={`py-12 md:py-24 relative overflow-hidden ${index % 2 === 0 ? "bg-white" : "bg-slate-50"}`}>
+    <section ref={ref} id={section.id} className={`py-12 md:py-24 relative overflow-hidden scroll-mt-24 ${index % 2 === 0 ? "bg-white" : "bg-slate-50"}`}>
       {/* Decorative background element */}
       <div className={`absolute top-1/2 -translate-y-1/2 ${isEven ? 'right-0 translate-x-1/3' : 'left-0 -translate-x-1/3'} w-96 h-96 bg-primary/5 rounded-full blur-3xl`} />
       
@@ -111,12 +111,15 @@ const ServicesPage = () => {
       setTimeout(() => {
         const el = document.querySelector(location.hash);
         if (el) {
-          const y = el.getBoundingClientRect().top + window.scrollY - 120;
+          const headerHeight = 100; // Header height + extra padding
+          const y = el.getBoundingClientRect().top + window.scrollY - headerHeight;
           window.scrollTo({ top: y, behavior: "smooth" });
         }
-      }, 100);
+      }, 300);
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
-  }, [location.hash]);
+  }, [location.hash, location.pathname]);
 
   const { ref: introRef, isVisible: introVisible } = useScrollAnimation();
 
