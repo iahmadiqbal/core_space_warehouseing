@@ -4,11 +4,13 @@ import { Facebook, Twitter, Linkedin, Instagram, Phone, Mail, MapPin } from "luc
 const Footer = () => {
   return (
     <footer className="bg-[#182448] text-white">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="container mx-auto py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4 lg:px-6">
           {/* Logo & About */}
           <div>
-            <img src="/headerlogo.png" alt="Core Space Warehousing" className="w-36 h-36 mb-4" />
+            <div className="mb-4">
+              <img src="/headerlogo.png" alt="Core Space Warehousing" className="h-20 lg:h-24 w-auto object-contain scale-[2] md:scale-[2.3] lg:scale-[2.5] origin-left -ml-2" />
+            </div>
             <p className="text-sm opacity-90 leading-relaxed">
               Core Space Warehousing provides flexible and reliable warehouse solutions for businesses across Canada.
             </p>
@@ -54,8 +56,10 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-white/20 mt-8 pt-6 text-center text-sm opacity-80">
-          © {new Date().getFullYear()} Core Space Warehousing. All rights reserved.
+        <div className="border-t border-white/20 mt-8 pt-6 px-4 lg:px-6">
+          <p className="text-sm opacity-80 text-center">
+            © {new Date().getFullYear()} Core Space Warehousing. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
