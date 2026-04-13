@@ -3,7 +3,7 @@ import { Facebook, Twitter, Linkedin, Instagram, Phone, Mail, MapPin } from "luc
 
 const Footer = () => {
   return (
-    <footer className="bg-[#951313] text-white">
+    <footer className="bg-[#182448] text-white border-t-2 border-gray-700">
       <div className="container mx-auto py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4 lg:px-6">
           {/* Logo & About */}

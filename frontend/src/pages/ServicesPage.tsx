@@ -157,7 +157,15 @@ const ServicesPage = () => {
         ))}
       </div>
 
-      <CTASection heading="Looking for the right storage solution for your business?" buttonText="Get in Touch" />
+      <CTASection 
+        heading={
+          <>
+            Looking for the right storage <br />
+            solution for your business?
+          </>
+        } 
+        buttonText="Get in Touch" 
+      />
     </div>
   );
 };
