@@ -30,18 +30,18 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-200 h-20 lg:h-24">
-      <div className="container mx-auto flex items-center justify-between px-3 h-full">
+      <div className="container mx-auto flex items-center justify-between px-0 lg:px-2 h-full">
         {/* Logo */}
-        <Link to="/" className="flex items-center h-full">
+        <Link to="/" className="flex items-center h-full py-2 mt-3">
           <img
             src="/headerlogo.png"
             alt="Core Space Warehousing"
-            className="h-full w-auto object-contain scale-[1.3] md:scale-[1.5] origin-left"
+            className="h-full w-auto object-contain scale-[2] md:scale-[2.3] lg:scale-[2.5] origin-left"
           />
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-1 mt-1">
           <Link
             to="/"
             className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors hover:bg-gray-100 ${
@@ -65,7 +65,7 @@ const Header = () => {
             </button>
 
             {openDropdown === "serve" && (
-              <div 
+              <div
                 className="absolute top-full left-0 pt-2 w-64"
                 onMouseEnter={() => setOpenDropdown("serve")}
                 onMouseLeave={() => setOpenDropdown(null)}
@@ -100,7 +100,7 @@ const Header = () => {
             </button>
 
             {openDropdown === "services" && (
-              <div 
+              <div
                 className="absolute top-full left-0 pt-2 w-64"
                 onMouseEnter={() => setOpenDropdown("services")}
                 onMouseLeave={() => setOpenDropdown(null)}
@@ -159,18 +159,23 @@ const Header = () => {
             className={`block py-3 px-4 rounded-md font-medium border-b border-gray-100 ${
               isActive("/") ? "text-[#951313] bg-gray-50" : "text-gray-800"
             }`}
-            onClick={() => { setMobileOpen(false); window.scrollTo(0,0); }}
+            onClick={() => {
+              setMobileOpen(false);
+              window.scrollTo(0, 0);
+            }}
           >
             Home
           </Link>
-          
+
           <div className="py-2 border-b border-gray-100">
-            <button 
+            <button
               className="w-full flex items-center justify-between py-2 px-4 font-bold text-gray-900 uppercase text-xs tracking-wider"
               onClick={() => setMobileServeOpen(!mobileServeOpen)}
             >
               Who We Serve
-              <ChevronDown className={`h-4 w-4 transition-transform ${mobileServeOpen ? "rotate-180" : ""}`} />
+              <ChevronDown
+                className={`h-4 w-4 transition-transform ${mobileServeOpen ? "rotate-180" : ""}`}
+              />
             </button>
             {mobileServeOpen && (
               <div className="pl-4 flex flex-col mt-1">
@@ -179,7 +184,10 @@ const Header = () => {
                     key={item.label}
                     to={item.path}
                     className="block py-2.5 px-4 text-sm font-medium text-gray-600 hover:text-[#951313] hover:bg-gray-50 rounded-md"
-                    onClick={() => { setMobileOpen(false); window.scrollTo(0,0); }}
+                    onClick={() => {
+                      setMobileOpen(false);
+                      window.scrollTo(0, 0);
+                    }}
                   >
                     {item.label}
                   </Link>
@@ -189,12 +197,14 @@ const Header = () => {
           </div>
 
           <div className="py-2 border-b border-gray-100">
-            <button 
+            <button
               className="w-full flex items-center justify-between py-2 px-4 font-bold text-gray-900 uppercase text-xs tracking-wider"
               onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
             >
               Our Services
-              <ChevronDown className={`h-4 w-4 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`} />
+              <ChevronDown
+                className={`h-4 w-4 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`}
+              />
             </button>
             {mobileServicesOpen && (
               <div className="pl-4 flex flex-col mt-1">
@@ -203,7 +213,10 @@ const Header = () => {
                     key={item.label}
                     to={item.path}
                     className="block py-2.5 px-4 text-sm font-medium text-gray-600 hover:text-[#951313] hover:bg-gray-50 rounded-md"
-                    onClick={() => { setMobileOpen(false); window.scrollTo(0,0); }}
+                    onClick={() => {
+                      setMobileOpen(false);
+                      window.scrollTo(0, 0);
+                    }}
                   >
                     {item.label}
                   </Link>
@@ -217,7 +230,10 @@ const Header = () => {
             className={`block py-3 px-4 rounded-md font-medium border-b border-gray-100 ${
               isActive("/about") ? "text-[#951313] bg-gray-50" : "text-gray-800"
             }`}
-            onClick={() => { setMobileOpen(false); window.scrollTo(0,0); }}
+            onClick={() => {
+              setMobileOpen(false);
+              window.scrollTo(0, 0);
+            }}
           >
             About
           </Link>
@@ -225,7 +241,10 @@ const Header = () => {
           <Link
             to="/get-a-quote"
             className="mt-6 mb-4 mx-2 px-4 py-3 bg-[#182448] text-white rounded-md text-center font-bold hover:opacity-90 transition-opacity"
-            onClick={() => { setMobileOpen(false); window.scrollTo(0,0); }}
+            onClick={() => {
+              setMobileOpen(false);
+              window.scrollTo(0, 0);
+            }}
           >
             Get a Quote
           </Link>
