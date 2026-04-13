@@ -52,7 +52,7 @@ const Header = () => {
           </Link>
 
           <div
-            className="relative"
+            className="relative group"
             onMouseEnter={() => setOpenDropdown("serve")}
             onMouseLeave={() => setOpenDropdown(null)}
           >
@@ -66,26 +66,28 @@ const Header = () => {
 
             {openDropdown === "serve" && (
               <div 
-                className="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-lg border border-gray-200 py-2"
+                className="absolute top-full left-0 pt-2 w-64"
                 onMouseEnter={() => setOpenDropdown("serve")}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
-                {whoWeServeItems.map((item) => (
-                  <Link
-                    key={item.label}
-                    to={item.path}
-                    className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#951313]"
-                    onClick={() => setOpenDropdown(null)}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
+                <div className="bg-white rounded-lg shadow-lg border border-gray-200 py-2">
+                  {whoWeServeItems.map((item) => (
+                    <Link
+                      key={item.label}
+                      to={item.path}
+                      className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#951313]"
+                      onClick={() => setOpenDropdown(null)}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
               </div>
             )}
           </div>
 
           <div
-            className="relative"
+            className="relative group"
             onMouseEnter={() => setOpenDropdown("services")}
             onMouseLeave={() => setOpenDropdown(null)}
           >
@@ -99,20 +101,22 @@ const Header = () => {
 
             {openDropdown === "services" && (
               <div 
-                className="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-lg border border-gray-200 py-2"
+                className="absolute top-full left-0 pt-2 w-64"
                 onMouseEnter={() => setOpenDropdown("services")}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
-                {servicesItems.map((item) => (
-                  <Link
-                    key={item.label}
-                    to={item.path}
-                    className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#951313]"
-                    onClick={() => setOpenDropdown(null)}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
+                <div className="bg-white rounded-lg shadow-lg border border-gray-200 py-2">
+                  {servicesItems.map((item) => (
+                    <Link
+                      key={item.label}
+                      to={item.path}
+                      className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#951313]"
+                      onClick={() => setOpenDropdown(null)}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
               </div>
             )}
           </div>
