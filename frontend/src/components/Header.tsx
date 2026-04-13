@@ -34,7 +34,7 @@ const Header = () => {
         {/* Logo */}
         <Link to="/" className="flex items-center h-full py-2 mt-3">
           <img
-            src="/headerlogo.png"
+            src="/footerlogo.png"
             alt="Core Space Warehousing"
             className="h-full w-auto object-contain scale-[2] md:scale-[2.3] lg:scale-[2.5] origin-left"
           />
