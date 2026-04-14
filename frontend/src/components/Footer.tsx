@@ -48,8 +48,8 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-lg mb-4">Contact Us</h4>
             <ul className="space-y-3 text-sm opacity-90">
-              <li className="flex items-start gap-2"><MapPin className="h-4 w-4 mt-0.5 shrink-0" /> 123 Warehouse Ave, Toronto, ON, Canada</li>
-              <li className="flex items-center gap-2"><Phone className="h-4 w-4 shrink-0" /> +1 (800) 123-4567</li>
+              <li className="flex items-start gap-2"><MapPin className="h-4 w-4 mt-0.5 shrink-0" /> 290-3030 3 Avenue NE, Calgary, AB, Canada T2A 6T7</li>
+              <li className="flex items-center gap-2"><Phone className="h-4 w-4 shrink-0" /> +1 403-836-3227</li>
               <li className="flex items-center gap-2"><Mail className="h-4 w-4 shrink-0" /> info@corespacewh.com</li>
             </ul>
           </div>
