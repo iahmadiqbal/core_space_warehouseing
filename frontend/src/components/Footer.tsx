@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Facebook, Twitter, Linkedin, Instagram, Phone, Mail, MapPin } from "lucide-react";
+import { Facebook, Twitter, Instagram, Phone, Mail, MapPin } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -15,10 +15,9 @@ const Footer = () => {
               Core Space Warehousing provides flexible and reliable warehouse solutions for businesses across Canada.
             </p>
             <div className="flex gap-3 mt-4">
-              <a href="#" className="p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors"><Facebook className="h-4 w-4" /></a>
-              <a href="#" className="p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors"><Twitter className="h-4 w-4" /></a>
-              <a href="#" className="p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors"><Linkedin className="h-4 w-4" /></a>
-              <a href="#" className="p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors"><Instagram className="h-4 w-4" /></a>
+              <a href="https://www.facebook.com/profile.php?id=61573476435817" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors"><Facebook className="h-4 w-4" /></a>
+              <a href="https://x.com/Corespace1995" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors"><Twitter className="h-4 w-4" /></a>
+              <a href="https://www.instagram.com/corespacewarehousing/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors"><Instagram className="h-4 w-4" /></a>
             </div>
           </div>
 
