@@ -118,13 +118,13 @@ const GetAQuotePage = () => {
       {/* Contact Quick Links */}
       <section ref={contactRef} className="py-24 bg-white border-t border-slate-200">
         <div className={`container mx-auto px-4 ${contactVis ? "animate-slide-up" : "opacity-0"}`}>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="flex flex-col items-center p-8 bg-slate-50 rounded-2xl hover:bg-white hover:shadow-xl transition-all border border-slate-100">
               <div className="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-6">
                 <Phone className="h-8 w-8" />
               </div>
               <h3 className="font-bold text-slate-900 mb-2 text-xl">Call Us</h3>
-              <p className="text-slate-500 mb-1">+1 (800) 123-4567</p>
+              <p className="text-slate-500 mb-1">+1 403-836-3227</p>
             </div>
 
             <div className="flex flex-col items-center p-8 bg-slate-50 rounded-2xl hover:bg-white hover:shadow-xl transition-all border border-slate-100">
@@ -132,15 +132,7 @@ const GetAQuotePage = () => {
                 <Mail className="h-8 w-8" />
               </div>
               <h3 className="font-bold text-slate-900 mb-2 text-xl">Email Us</h3>
-              <p className="text-slate-500 mb-1">info@corespacewh.com</p>
-            </div>
-
-            <div className="flex flex-col items-center p-8 bg-slate-50 rounded-2xl hover:bg-white hover:shadow-xl transition-all border border-slate-100">
-              <div className="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-6">
-                <Clock className="h-8 w-8" />
-              </div>
-              <h3 className="font-bold text-slate-900 mb-2 text-xl">Hours</h3>
-              <p className="text-slate-500 mb-1">Mon – Fri, 9AM – 6PM EST</p>
+              <p className="text-slate-500 mb-1">info@corespacewarehousing.com</p>
             </div>
           </div>
         </div>

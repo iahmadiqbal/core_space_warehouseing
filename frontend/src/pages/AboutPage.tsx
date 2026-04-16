@@ -48,23 +48,13 @@ const AboutPage = () => {
         <div className="container mx-auto px-4">
           <div className={`max-w-4xl mx-auto ${whoVis ? "animate-slide-up" : "opacity-0"}`}>
             <h2 className="text-accent font-bold tracking-widest uppercase text-sm mb-3 text-center md:text-left">Who We Are</h2>
-            <h3 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 text-center md:text-left leading-tight">Built on Reliability and Trust</h3>
-            <p className="text-slate-600 text-lg md:text-xl leading-relaxed mb-6 text-center md:text-left font-medium">
+            <h3 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6 text-center md:text-left leading-tight">Built on Reliability and Trust</h3>
+            <p className="text-slate-600 text-base md:text-lg leading-relaxed mb-6 text-center md:text-left">
               Core Space Warehousing is a trusted warehousing solutions provider serving businesses across Canada. We specialize in offering flexible, reliable, and secure warehouse spaces that adapt to the evolving needs of modern businesses.
             </p>
-            <p className="text-slate-600 text-lg md:text-xl leading-relaxed mb-10 text-center md:text-left">
+            <p className="text-slate-600 text-base md:text-lg leading-relaxed mb-10 text-center md:text-left">
               Our mission is simple: provide the right space, at the right time, at the right price. Whether you're a small business looking for temporary storage or a large enterprise requiring dedicated facilities, we are committed to being your dependable partner.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 max-w-2xl mx-auto md:mx-0">
-              <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100 flex-1 text-center shadow-sm hover:shadow-xl hover:-translate-y-2 hover:border-primary/30 transition-all duration-500">
-                <p className="text-5xl font-black text-primary mb-2">5M+</p>
-                <p className="text-slate-500 text-sm font-bold uppercase tracking-widest">Sq. Ft. Managed</p>
-              </div>
-              <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100 flex-1 text-center shadow-sm hover:shadow-xl hover:-translate-y-2 hover:border-primary/30 transition-all duration-500">
-                <p className="text-5xl font-black text-primary mb-2">200+</p>
-                <p className="text-slate-500 text-sm font-bold uppercase tracking-widest">B2B Clients</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
